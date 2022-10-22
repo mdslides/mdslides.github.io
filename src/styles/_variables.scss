@@ -1,0 +1,14 @@
+:root {
+  --base-font-size: 16px;
+  --color-bg: #fff;
+  --color-border: #ddd;
+  --color-selection: rgba(181, 139, 243, 0.25);
+  --color-text: #111;
+  --gap: 2rem;
+
+  @media (prefers-color-scheme: dark) {
+    --color-bg: #111;
+    --color-border: #444;
+    --color-text: #fff;
+  }
+}

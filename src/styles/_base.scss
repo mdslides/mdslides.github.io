@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-selection);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container-l {
+  margin: 0 auto;
+  padding: 0 calc(var(--gap) / 2);
+  max-width: 1140px;
+}
+
+.container-s {
+  margin: 0 auto;
+  padding: 0 calc(var(--gap) / 2);
+  max-width: 680px;
+}
