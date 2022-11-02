@@ -1,8 +1,8 @@
 <template>
   <div class="default-layout">
-    <div class="container-l">
+    <header class="container-l">
       <NavigationBar />
-    </div>
+    </header>
 
     <main>
       <slot />
@@ -23,5 +23,11 @@ export default {
 <style lang="scss">
 .default-layout {
   padding-bottom: calc(var(--gap) * 3);
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
 }
 </style>

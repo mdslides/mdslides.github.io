@@ -26,6 +26,7 @@ export default {
   margin-bottom: var(--gap);
   padding: calc(var(--gap) / 2) 0;
   border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-bg);
 
   &__link {
     padding: 0 16px;
@@ -34,7 +35,6 @@ export default {
     font-weight: 500;
     color: var(--color-text);
     transition: border 0.1s;
-    outline: none;
 
     &:hover {
       border-color: var(--color-border);
