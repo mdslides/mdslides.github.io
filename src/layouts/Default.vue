@@ -22,8 +22,6 @@ export default {
 
 <style lang="scss">
 .default-layout {
-  padding-bottom: calc(var(--gap) * 3);
-
   header {
     position: sticky;
     top: 0;

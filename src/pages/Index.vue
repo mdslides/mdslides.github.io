@@ -1,26 +1,26 @@
 <template>
   <Layout class="index-page">
-    <div class="container-s index-page__lead">
+    <section class="container-s">
       <h1>Markdown slides editor</h1>
 
       <p>Create your next presentation with Markdown</p>
-    </div>
+    </section>
 
-    <div class="container-l index-page__frames">
+    <section class="container-m index-page__frames">
       <g-image
         src="~/assets/app-cover.png"
         alt="MdSlides - App cover image"
-        width="1140"
+        width="1400"
         quality="95"
       />
 
       <g-image
         src="~/assets/app-cover-mobile.png"
         alt="MdSlides - Mobile app cover image"
-        width="300"
+        width="400"
         quality="95"
       />
-    </div>
+    </section>
   </Layout>
 </template>
 
@@ -36,8 +36,11 @@ export default {
 .index-page {
   text-align: center;
 
-  &__lead {
-    margin-top: calc(var(--gap) * 1.5);
+  section {
+    &:first-child {
+      margin-top: calc(var(--gap) * 1.5);
+    }
+
     margin-bottom: calc(var(--gap) * 1.5);
   }
 
@@ -45,6 +48,7 @@ export default {
     position: relative;
 
     img {
+      display: block;
       border: 1px solid var(--color-border);
       box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.025);
       user-select: none;

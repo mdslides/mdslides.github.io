@@ -30,6 +30,12 @@ img {
   max-width: 1140px;
 }
 
+.container-m {
+  margin: 0 auto;
+  padding: 0 calc(var(--gap) / 2);
+  max-width: 920px;
+}
+
 .container-s {
   margin: 0 auto;
   padding: 0 calc(var(--gap) / 2);
