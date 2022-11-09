@@ -21,6 +21,68 @@
         quality="95"
       />
     </section>
+
+    <section class="container-l index-page__features">
+      <div>
+        <h4>
+          <span class="fa fa-bullseye" />
+          Goal-Oriented
+        </h4>
+
+        <p>
+          Unlike many other presentation editors, MdSlides is designed to focus
+          on the content rather than moving text blocks back and forth.
+        </p>
+      </div>
+
+      <div>
+        <h4>
+          <span class="fa fa-universal-access" />
+          Accessible
+        </h4>
+
+        <p>
+          Creating presentations in MdSlides is declarative in nature. It
+          requires no extra interaction other than writing down one's thoughts.
+        </p>
+      </div>
+
+      <div>
+        <h4>
+          <span class="fa fa-mobile-screen-button" />
+          Mobile First
+        </h4>
+
+        <p>
+          The device used does not affect the process of creating presentations,
+          nor the final result.
+        </p>
+      </div>
+
+      <div>
+        <h4>
+          <span class="fa fa-circle-down" />
+          Exporting
+        </h4>
+
+        <p>
+          The one's progress can be saved as a Markdown file or exported as a
+          PDF document.
+        </p>
+      </div>
+
+      <div>
+        <h4>
+          <span class="fa fa-rotate" />
+          Autosaving
+        </h4>
+
+        <p>
+          The progress is continuously autosaved as a draft, so that it isn't
+          lost when quitting.
+        </p>
+      </div>
+    </section>
   </Layout>
 </template>
 
@@ -59,6 +121,33 @@ export default {
         right: 7.5%;
         width: 25%;
       }
+    }
+  }
+
+  &__features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+    & > * {
+      margin: calc(var(--gap) / 2);
+      padding: var(--gap);
+      border: 1px solid var(--color-border);
+      box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.025);
+      text-align: left;
+    }
+
+    h4 {
+      margin-top: 1rem;
+
+      span {
+        margin-right: 0.25rem;
+      }
+    }
+  }
+
+  @media (max-width: 400px) {
+    &__features {
+      grid-template-columns: 1fr;
     }
   }
 }
