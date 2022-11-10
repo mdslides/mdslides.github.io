@@ -6,7 +6,7 @@
       <p>Create your next presentation with Markdown</p>
     </section>
 
-    <section class="container-m index-page__frames">
+    <section class="container-m index-page__covers">
       <g-image
         src="~/assets/app-cover.png"
         alt="MdSlides - App cover image"
@@ -106,12 +106,13 @@ export default {
     margin-bottom: calc(var(--gap) * 1.5);
   }
 
-  &__frames {
+  &__covers {
     position: relative;
 
     img {
       display: block;
-      border: 1px solid var(--color-border);
+      border: 1px solid var(--color-border-cover);
+      border-radius: 1px;
       box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.025);
       user-select: none;
 
