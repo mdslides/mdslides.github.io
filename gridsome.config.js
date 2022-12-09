@@ -1,8 +1,11 @@
+const i18n = require('./plugins/i18n')
+
 module.exports = {
   siteName: 'MdSlides',
   siteDescription: 'Markdown slides editor',
   siteUrl: 'https://mdslides.github.io',
   titleTemplate: '%s / mdslides',
+  plugins: [i18n],
   transformers: {
     remark: {
       externalLinksTarget: '_blank',

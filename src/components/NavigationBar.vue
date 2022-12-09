@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar">
-    <g-link to="/">
+    <g-link :to="$tp('/')">
       <Logo />
     </g-link>
 
