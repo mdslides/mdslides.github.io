@@ -1,9 +1,9 @@
 <template>
   <Layout class="not-found-page">
     <div class="container-s">
-      <h1>Page not found</h1>
+      <h1>{{ $t('pageNotFound') }}</h1>
 
-      <p>The page doesn't exist or was removed</p>
+      <p>{{ $t('pageNotFoundDescription') }}</p>
     </div>
   </Layout>
 </template>

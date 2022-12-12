@@ -9,6 +9,9 @@ import '~/styles/index.scss'
 
 import DefaultLayout from '~/layouts/Default.vue'
 
-export default function (Vue) {
+export default function (Vue, { appOptions }) {
+  appOptions.i18n.setLocaleMessage('be', require('./locales/be.json'))
+  appOptions.i18n.setLocaleMessage('en', require('./locales/en.json'))
+
   Vue.component('Layout', DefaultLayout)
 }

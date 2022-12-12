@@ -1,9 +1,9 @@
 <template>
   <Layout class="index-page">
     <section class="container-s">
-      <h1>Markdown slides editor</h1>
+      <h1>{{ $t('appDescription') }}</h1>
 
-      <p>Create your next presentation with Markdown</p>
+      <p>{{ $t('appMotto') }}</p>
     </section>
 
     <section class="container-m index-page__covers">
@@ -26,61 +26,46 @@
       <div>
         <h4>
           <span class="fa fa-bullseye" />
-          Goal-Oriented
+          {{ $t('feature1Heading') }}
         </h4>
 
-        <p>
-          Unlike many other presentation editors, MdSlides is designed to focus
-          on the content rather than moving text blocks back and forth.
-        </p>
+        <p>{{ $t('feature1Text') }}</p>
       </div>
 
       <div>
         <h4>
           <span class="fa fa-universal-access" />
-          Accessible
+          {{ $t('feature2Heading') }}
         </h4>
 
-        <p>
-          Creating presentations in MdSlides is declarative in nature. It
-          requires no extra interaction other than writing down one's thoughts.
-        </p>
+        <p>{{ $t('feature2Text') }}</p>
       </div>
 
       <div>
         <h4>
           <span class="fa fa-mobile-screen-button" />
-          Mobile First
+          {{ $t('feature3Heading') }}
         </h4>
 
-        <p>
-          The device used does not affect the process of creating presentations,
-          nor the final result.
-        </p>
+        <p>{{ $t('feature3Text') }}</p>
       </div>
 
       <div>
         <h4>
           <span class="fa fa-circle-down" />
-          Exporting
+          {{ $t('feature4Heading') }}
         </h4>
 
-        <p>
-          The one's progress can be saved as a Markdown file or exported as a
-          PDF document.
-        </p>
+        <p>{{ $t('feature4Text') }}</p>
       </div>
 
       <div>
         <h4>
           <span class="fa fa-rotate" />
-          Autosaving
+          {{ $t('feature5Heading') }}
         </h4>
 
-        <p>
-          The progress is continuously autosaved as a draft, so that it isn't
-          lost when quitting.
-        </p>
+        <p>{{ $t('feature5Text') }}</p>
       </div>
     </section>
   </Layout>
