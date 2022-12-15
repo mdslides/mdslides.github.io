@@ -6,20 +6,15 @@
       <p>{{ $t('appMotto') }}</p>
     </section>
 
-    <section class="container-m index-page__covers">
-      <g-image
-        src="~/assets/app-cover.png"
-        alt="MdSlides - App cover image"
-        width="1400"
-        quality="95"
-      />
-
-      <g-image
-        src="~/assets/app-cover-mobile.png"
-        alt="MdSlides - Mobile app cover image"
-        width="400"
-        quality="95"
-      />
+    <section class="container-m">
+      <BrowserFrame>
+        <g-image
+          src="~/assets/app-cover.png"
+          alt="MdSlides - App cover image"
+          width="1400"
+          quality="95"
+        />
+      </BrowserFrame>
     </section>
 
     <section class="container-l index-page__features">
@@ -72,7 +67,12 @@
 </template>
 
 <script>
+import BrowserFrame from '~/components/BrowserFrame.vue'
+
 export default {
+  components: {
+    BrowserFrame,
+  },
   metaInfo: {
     title: 'Home',
   },
@@ -91,25 +91,6 @@ export default {
     margin-bottom: calc(var(--gap) * 1.5);
   }
 
-  &__covers {
-    position: relative;
-
-    img {
-      display: block;
-      border: 1px solid var(--color-border-cover);
-      border-radius: 1px;
-      box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.025);
-      user-select: none;
-
-      &:last-of-type {
-        position: absolute;
-        bottom: -2.5%;
-        right: 7.5%;
-        width: 25%;
-      }
-    }
-  }
-
   &__features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -118,7 +99,6 @@ export default {
       margin: calc(var(--gap) / 2);
       padding: var(--gap);
       border: 1px solid var(--color-border);
-      box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.025);
       text-align: left;
     }
 
