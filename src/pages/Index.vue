@@ -73,8 +73,10 @@ export default {
   components: {
     BrowserFrame,
   },
-  metaInfo: {
-    title: 'Home',
+  metaInfo() {
+    return {
+      title: this.$t('routeHome'),
+    }
   },
 }
 </script>

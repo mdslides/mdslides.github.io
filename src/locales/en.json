@@ -13,5 +13,6 @@
   "feature5Text": "The progress is continuously autosaved as a draft, so that it isn't lost when quitting.",
   "openApp": "Open app",
   "pageNotFound": "Page not found",
-  "pageNotFoundDescription": "The page doesn't exist or was removed"
+  "pageNotFoundDescription": "The page doesn't exist or was removed",
+  "routeHome": "Home"
 }
