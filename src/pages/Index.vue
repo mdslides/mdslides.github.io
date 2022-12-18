@@ -11,7 +11,7 @@
         <g-image
           src="~/assets/app-cover.png"
           alt="MdSlides - App cover image"
-          width="1400"
+          width="1800"
           quality="95"
         />
       </BrowserFrame>
