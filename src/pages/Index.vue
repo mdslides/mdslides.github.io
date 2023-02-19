@@ -29,7 +29,7 @@
 
       <div>
         <h4>
-          <span class="fa fa-universal-access" />
+          <span class="fa fa-mobile-screen-button" />
           {{ $t('feature2Heading') }}
         </h4>
 
@@ -38,7 +38,7 @@
 
       <div>
         <h4>
-          <span class="fa fa-mobile-screen-button" />
+          <span class="fa fa-circle-down" />
           {{ $t('feature3Heading') }}
         </h4>
 
@@ -47,7 +47,7 @@
 
       <div>
         <h4>
-          <span class="fa fa-circle-down" />
+          <span class="fa fa-universal-access" />
           {{ $t('feature4Heading') }}
         </h4>
 
@@ -56,11 +56,20 @@
 
       <div>
         <h4>
-          <span class="fa fa-rotate" />
+          <span class="fa fa-shield-halved" />
           {{ $t('feature5Heading') }}
         </h4>
 
         <p>{{ $t('feature5Text') }}</p>
+      </div>
+
+      <div>
+        <h4>
+          <span class="fa fa-unlock" />
+          {{ $t('feature6Heading') }}
+        </h4>
+
+        <p>{{ $t('feature6Text') }}</p>
       </div>
     </section>
   </Layout>
