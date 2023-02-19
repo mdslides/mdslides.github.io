@@ -42,7 +42,13 @@
           {{ $t('feature3Heading') }}
         </h4>
 
-        <p>{{ $t('feature3Text') }}</p>
+        <i18n path="feature3Text" tag="p">
+          <template #link>
+            <a href="https://web.dev/progressive-web-apps/" target="_blank">{{
+              $t('feature3TextLink')
+            }}</a>
+          </template>
+        </i18n>
       </div>
 
       <div>
@@ -69,7 +75,11 @@
           {{ $t('feature6Heading') }}
         </h4>
 
-        <p>{{ $t('feature6Text') }}</p>
+        <i18n path="feature6Text" tag="p">
+          <template #link>
+            <a href="https://github.com/mdslides" target="_blank">GitHub</a>
+          </template>
+        </i18n>
       </div>
     </section>
   </Layout>
@@ -118,6 +128,16 @@ export default {
 
       span {
         margin-right: 0.25rem;
+      }
+    }
+
+    a {
+      text-decoration: underline;
+      text-decoration-color: var(--color-border);
+      transition: text-decoration 0.1s;
+
+      &:hover {
+        text-decoration-color: var(--text);
       }
     }
   }
