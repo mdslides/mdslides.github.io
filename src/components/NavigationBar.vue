@@ -5,18 +5,7 @@
     </g-link>
 
     <div class="navbar__actions">
-      <router-link
-        :to="{
-          path: '/app',
-          query: {
-            ...($i18n.locale !== $i18n.fallbackLocale && {
-              lang: $i18n.locale,
-            }),
-          },
-        }"
-      >
-        {{ $t('openApp') }}
-      </router-link>
+      <a :href="appLink">{{ $t('openApp') }}</a>
 
       <LanguageSwitcher />
     </div>
@@ -31,6 +20,15 @@ export default {
   components: {
     LanguageSwitcher,
     Logo,
+  },
+  computed: {
+    appLink() {
+      let link = '/app'
+      if (this.$i18n.locale !== this.$i18n.fallbackLocale) {
+        link += '?lang=' + this.$i18n.locale
+      }
+      return link
+    },
   },
 }
 </script>
