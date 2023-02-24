@@ -5,7 +5,9 @@
     </g-link>
 
     <div class="navbar__actions">
-      <a :href="appLink">{{ $t('openApp') }}</a>
+      <a :href="'/app/?lang=' + $i18n.locale">
+        {{ $t('openApp') }}
+      </a>
 
       <LanguageSwitcher />
     </div>
@@ -20,15 +22,6 @@ export default {
   components: {
     LanguageSwitcher,
     Logo,
-  },
-  computed: {
-    appLink() {
-      let link = '/app'
-      if (this.$i18n.locale !== this.$i18n.fallbackLocale) {
-        link += '?lang=' + this.$i18n.locale
-      }
-      return link
-    },
   },
 }
 </script>
