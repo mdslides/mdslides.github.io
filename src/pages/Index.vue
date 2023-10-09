@@ -18,66 +18,17 @@
     </section>
 
     <section class="container-l index-page__features">
-      <div>
+      <div v-for="feature in features" :key="feature.key">
         <h4>
-          <span class="fa fa-bullseye" />
-          {{ $t('feature1Heading') }}
+          <component :is="feature.icon" />
+          {{ $t(`feature${feature.key}Heading`) }}
         </h4>
 
-        <p>{{ $t('feature1Text') }}</p>
-      </div>
-
-      <div>
-        <h4>
-          <span class="fa fa-mobile-screen-button" />
-          {{ $t('feature2Heading') }}
-        </h4>
-
-        <p>{{ $t('feature2Text') }}</p>
-      </div>
-
-      <div>
-        <h4>
-          <span class="fa fa-circle-down" />
-          {{ $t('feature3Heading') }}
-        </h4>
-
-        <i18n path="feature3Text" tag="p">
+        <i18n :path="`feature${feature.key}Text`" tag="p">
           <template #link>
-            <a href="https://web.dev/progressive-web-apps/" target="_blank">{{
-              $t('feature3TextLink')
+            <a :href="feature.href" target="_blank">{{
+              $t(`feature${feature.key}TextLink`)
             }}</a>
-          </template>
-        </i18n>
-      </div>
-
-      <div>
-        <h4>
-          <span class="fa fa-universal-access" />
-          {{ $t('feature4Heading') }}
-        </h4>
-
-        <p>{{ $t('feature4Text') }}</p>
-      </div>
-
-      <div>
-        <h4>
-          <span class="fa fa-shield-halved" />
-          {{ $t('feature5Heading') }}
-        </h4>
-
-        <p>{{ $t('feature5Text') }}</p>
-      </div>
-
-      <div>
-        <h4>
-          <span class="fa fa-unlock" />
-          {{ $t('feature6Heading') }}
-        </h4>
-
-        <i18n path="feature6Text" tag="p">
-          <template #link>
-            <a href="https://github.com/mdslides" target="_blank">GitHub</a>
           </template>
         </i18n>
       </div>
@@ -86,11 +37,50 @@
 </template>
 
 <script>
+import AccessibilityNewIcon from '@material-design-icons/svg/sharp/accessibility_new.svg'
+import CodeIcon from '@material-design-icons/svg/sharp/code.svg'
+import DevicesIcon from '@material-design-icons/svg/sharp/devices.svg'
+import InstallDesktopIcon from '@material-design-icons/svg/sharp/install_desktop.svg'
+import TaskAltIcon from '@material-design-icons/svg/sharp/task_alt.svg'
+import VerifiedUserIcon from '@material-design-icons/svg/sharp/verified_user.svg'
+
 import BrowserFrame from '~/components/BrowserFrame.vue'
 
 export default {
   components: {
     BrowserFrame,
+  },
+  data() {
+    return {
+      features: [
+        {
+          key: 1,
+          icon: TaskAltIcon,
+        },
+        {
+          key: 2,
+          icon: DevicesIcon,
+        },
+        {
+          key: 3,
+          icon: InstallDesktopIcon,
+          href: 'https://web.dev/progressive-web-apps/',
+        },
+        {
+          key: 4,
+          icon: AccessibilityNewIcon,
+        },
+        {
+          key: 5,
+          icon: VerifiedUserIcon,
+        },
+        {
+          key: 6,
+          icon: CodeIcon,
+          href: 'https://github.com/mdslides',
+        },
+      ],
+    }
   },
   metaInfo() {
     return {
@@ -126,8 +116,10 @@ export default {
     h4 {
       margin-top: 1rem;
 
-      span {
+      svg {
+        display: inline-block;
         margin-right: 0.25rem;
+        vertical-align: text-bottom;
       }
     }
 

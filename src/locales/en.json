@@ -14,6 +14,7 @@
   "feature5Text": "Processing data is not stored in the application, but in the one's device/browser only.",
   "feature6Heading": "Open Source",
   "feature6Text": "The application development is community-driven. Contributions are welcome on {link}.",
+  "feature6TextLink": "GitHub",
   "openApp": "Open app",
   "pageNotFound": "Page not found",
   "pageNotFoundDescription": "The page doesn't exist or was removed",
