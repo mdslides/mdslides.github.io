@@ -18,31 +18,25 @@
     </section>
 
     <section class="container-l index-page__features">
-      <div v-for="feature in features" :key="feature.key">
+      <div v-for="edge in $page.features.edges" :key="edge.node.id">
         <h4>
-          <component :is="feature.icon" />
-          {{ $t(`feature${feature.key}Heading`) }}
+          <component :is="icons[edge.node.icon]" />
+          {{ edge.node.title }}
         </h4>
 
-        <i18n :path="`feature${feature.key}Text`" tag="p">
-          <template #link>
-            <a :href="feature.href" target="_blank">{{
-              $t(`feature${feature.key}TextLink`)
-            }}</a>
-          </template>
-        </i18n>
+        <div v-html="edge.node.content" />
       </div>
     </section>
   </Layout>
 </template>
 
 <script>
-import AccessibilityNewIcon from '@material-design-icons/svg/sharp/accessibility_new.svg'
-import CodeIcon from '@material-design-icons/svg/sharp/code.svg'
-import DevicesIcon from '@material-design-icons/svg/sharp/devices.svg'
-import InstallDesktopIcon from '@material-design-icons/svg/sharp/install_desktop.svg'
-import TaskAltIcon from '@material-design-icons/svg/sharp/task_alt.svg'
-import VerifiedUserIcon from '@material-design-icons/svg/sharp/verified_user.svg'
+import accessibility_new from '@material-design-icons/svg/sharp/accessibility_new.svg'
+import code from '@material-design-icons/svg/sharp/code.svg'
+import devices from '@material-design-icons/svg/sharp/devices.svg'
+import install_desktop from '@material-design-icons/svg/sharp/install_desktop.svg'
+import task_alt from '@material-design-icons/svg/sharp/task_alt.svg'
+import verified_user from '@material-design-icons/svg/sharp/verified_user.svg'
 
 import BrowserFrame from '~/components/BrowserFrame.vue'
 
@@ -52,34 +46,14 @@ export default {
   },
   data() {
     return {
-      features: [
-        {
-          key: 1,
-          icon: TaskAltIcon,
-        },
-        {
-          key: 2,
-          icon: DevicesIcon,
-        },
-        {
-          key: 3,
-          icon: InstallDesktopIcon,
-          href: 'https://web.dev/progressive-web-apps/',
-        },
-        {
-          key: 4,
-          icon: AccessibilityNewIcon,
-        },
-        {
-          key: 5,
-          icon: VerifiedUserIcon,
-        },
-        {
-          key: 6,
-          icon: CodeIcon,
-          href: 'https://github.com/mdslides',
-        },
-      ],
+      icons: {
+        accessibility_new,
+        code,
+        devices,
+        install_desktop,
+        task_alt,
+        verified_user,
+      },
     }
   },
   metaInfo() {
@@ -89,6 +63,25 @@ export default {
   },
 }
 </script>
+
+<page-query>
+query($locale: String = "en") {
+  features: allFeature(
+    filter: { language: { eq: $locale } }
+    sortBy: "fileInfo.name"
+    order: ASC
+  ) {
+    edges {
+      node {
+        content
+        icon
+        id
+        title
+      }
+    }
+  }
+}
+</page-query>
 
 <style lang="scss">
 .index-page {
@@ -131,6 +124,10 @@ export default {
       &:hover {
         text-decoration-color: var(--text);
       }
+    }
+
+    strong {
+      font-weight: 600;
     }
   }
 

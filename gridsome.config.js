@@ -4,12 +4,19 @@ module.exports = {
   siteName: 'MdSlides',
   siteDescription: 'Markdown slides editor',
   siteUrl: 'https://mdslides.github.io',
-  titleTemplate: '%s / mdslides',
-  plugins: [i18n],
+  plugins: [
+    i18n,
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'Feature',
+        path: './content/*/features/*.md',
+      },
+    },
+  ],
   transformers: {
     remark: {
-      externalLinksTarget: '_blank',
-      externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+      slug: false,
     },
   },
   chainWebpack(config) {
