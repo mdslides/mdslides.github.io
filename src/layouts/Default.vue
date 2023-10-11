@@ -13,9 +13,20 @@
 <script>
 import NavigationBar from '~/components/NavigationBar.vue'
 
+const langAliases = {
+  be: 'be-Latn',
+}
+
 export default {
   components: {
     NavigationBar,
+  },
+  metaInfo() {
+    return {
+      htmlAttrs: {
+        lang: langAliases[this.$i18n.locale] || this.$i18n.locale,
+      },
+    }
   },
 }
 </script>
