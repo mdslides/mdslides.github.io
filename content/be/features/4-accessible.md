@@ -4,4 +4,4 @@ title: Dastupnaść
 icon: accessibility_new
 ---
 
-Stvareńnie prezentacyj u **MdSlides** nosić deklaratyŭny charaktar. Nie patrabujecca anijakaha dadatkovaha ŭzajemadziejańnia, aprača vykładu svaich dumak.
+Stvareńnie prezentacyjaŭ u **MdSlides** nosić deklaratyŭny charaktar. Tamu nie patrabujecca anijakaha dadatkovaha ŭzajemadziejańnia, aprača vykładu svaich dumak.
