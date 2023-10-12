@@ -1,11 +1,17 @@
-const i18n = require('./plugins/i18n')
-
 module.exports = {
   siteName: 'MdSlides',
   siteDescription: 'Markdown slides editor',
   siteUrl: 'https://mdslides.github.io',
   plugins: [
-    i18n,
+    {
+      use: 'gridsome-plugin-i18n',
+      options: {
+        locales: ['be', 'en'],
+        defaultLocale: 'en',
+        fallbackLocale: 'en',
+        rewriteDefaultLanguage: false,
+      },
+    },
     {
       use: '@gridsome/source-filesystem',
       options: {
