@@ -10,8 +10,10 @@
 
 <script>
 export default {
-  metaInfo: {
-    title: 'Page not found',
+  metaInfo() {
+    return {
+      title: this.$t('pageNotFound'),
+    }
   },
 }
 </script>
