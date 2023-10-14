@@ -2,6 +2,7 @@ module.exports = {
   siteName: 'MdSlides',
   siteDescription: 'Markdown slides editor',
   siteUrl: 'https://mdslides.github.io',
+  titleTemplate: '%s / MdSlides',
   plugins: [
     {
       use: 'gridsome-plugin-i18n',
