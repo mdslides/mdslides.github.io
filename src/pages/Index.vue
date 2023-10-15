@@ -113,6 +113,7 @@ query($locale: String = "en") {
         display: inline-block;
         margin-right: 0.25rem;
         vertical-align: text-bottom;
+        fill: currentColor;
       }
     }
 
@@ -127,7 +128,7 @@ query($locale: String = "en") {
     }
 
     strong {
-      font-weight: 600;
+      font-weight: 700;
     }
   }
 
