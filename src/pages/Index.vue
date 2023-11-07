@@ -120,6 +120,7 @@ query($locale: String = "en") {
     a {
       text-decoration: underline;
       text-decoration-color: var(--color-border);
+      text-underline-position: from-font;
       transition: text-decoration 0.1s;
 
       &:hover {
